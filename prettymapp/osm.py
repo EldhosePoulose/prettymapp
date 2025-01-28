@@ -16,7 +16,7 @@ settings.log_console = False
 def get_osm_tags(landcover_classes: dict = LANDCOVER_CLASSES):
     """
     Get relevant OSM tags for use with prettymapp
-    
+
     Args:
         landcover_classes: Landcover selection settings, defaults to prettymapp.settings.LANDCOVER_CLASSES
         E.g.
@@ -37,11 +37,13 @@ def get_osm_tags(landcover_classes: dict = LANDCOVER_CLASSES):
 
 
 def cleanup_osm_df(
-    df: GeoDataFrame, aoi: Union[Polygon, None] = None, landcover_classes: dict = LANDCOVER_CLASSES
+    df: GeoDataFrame,
+    aoi: Union[Polygon, None] = None,
+    landcover_classes: dict = LANDCOVER_CLASSES,
 ) -> GeoDataFrame:
     """
     Cleanup of queried osm geometries to relevant level for use with prettymapp
-    
+
     Args:
         df: GeoDataFrame with queried OSM geometries
         aoi: Optional geographic boundary to filter elements
@@ -93,7 +95,9 @@ def get_osm_geometries(
 
 
 def get_osm_geometries_from_xml(
-    filepath: Union[str, Path], aoi: Union[Polygon, None] = None, landcover_classes: dict = LANDCOVER_CLASSES
+    filepath: Union[str, Path],
+    aoi: Union[Polygon, None] = None,
+    landcover_classes: dict = LANDCOVER_CLASSES,
 ) -> GeoDataFrame:
     """
     Query OSM features in an OSM-formatted XML file.
